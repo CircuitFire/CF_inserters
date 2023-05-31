@@ -166,7 +166,11 @@ local function get_absolute_drop_pos(entity, data)
 end
 
 function Inserter.offset_change(old, new)
-    return math.floor((new - old) / 2) + (old % 2)
+    if old % 2 == 0 then
+        return math.floor((new - old) / 2)
+    else
+        return math.ceil((new - old) / 2)
+    end
 end
 
 function Inserter.rotate_pickup(entity, amount)
@@ -200,7 +204,7 @@ end
 function Inserter.rotate_length(entity, amount)
     if amount == 0 then return end
     local data = Inserter.analyze(entity)
-    data.length = rotate_index(data.length, amount, settings.startup["cf-inserter-length"].value)
+    data.length = rotate_index(data.length, amount, settings.global["cf-inserter-length"].value)
 
     entity.pickup_position = get_absolute_pickup_pos(entity, data)
     entity.drop_position = get_absolute_drop_pos(entity, data)

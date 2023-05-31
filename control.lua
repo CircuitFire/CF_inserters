@@ -26,11 +26,15 @@ script.on_event(defines.events.on_gui_closed, function(event)
     Gui.close(event)
 end)
 
+local function rotation(event)
+    return settings.get_player_settings(event.player_index)["cf-rotation-amount"].value / 45
+end
+
 script.on_event("cf-drop-position", function(event)
     local entity = entity(event)
     if not is_inserter(entity) then return end
 
-    Inserter.rotate_drop(entity, 1)
+    Inserter.rotate_drop(entity, rotation(event))
     Gui.update(event, entity)
 end)
 
@@ -38,7 +42,7 @@ script.on_event("cf-drop-position-r", function(event)
     local entity = entity(event)
     if not is_inserter(entity) then return end
 
-    Inserter.rotate_drop(entity, -1)
+    Inserter.rotate_drop(entity, -rotation(event))
     Gui.update(event, entity)
 end)
 
@@ -46,7 +50,7 @@ script.on_event("cf-pickup-position", function(event)
     local entity = entity(event)
     if not is_inserter(entity) then return end
 
-    Inserter.rotate_pickup(entity, 1)
+    Inserter.rotate_pickup(entity, rotation(event))
     Gui.update(event, entity)
 end)
 
@@ -54,7 +58,7 @@ script.on_event("cf-pickup-position-r", function(event)
     local entity = entity(event)
     if not is_inserter(entity) then return end
 
-    Inserter.rotate_pickup(entity, -1)
+    Inserter.rotate_pickup(entity, -rotation(event))
     Gui.update(event, entity)
 end)
 
