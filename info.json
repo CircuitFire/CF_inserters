@@ -1,0 +1,11 @@
+{
+  "name": "CF_inserters",
+  "version": "0.0.1",
+  "factorio_version": "1.1",
+  "title": "CF inserters",
+  "author": "CircuitFire",
+  "description": "Overhauls inserters.",
+  "dependencies": [
+    "base"
+  ]
+}
