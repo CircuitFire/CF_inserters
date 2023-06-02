@@ -179,6 +179,7 @@ function Inserter.rotate_pickup(entity, amount)
     data.pickup = rotate_index(data.pickup, amount, 8)
 
     entity.pickup_position = get_absolute_pickup_pos(entity, data)
+    entity.direction = entity.direction
 end
 
 function Inserter.rotate_drop(entity, amount)
@@ -191,6 +192,7 @@ function Inserter.rotate_drop(entity, amount)
     data.offset = rotate_index(data.offset, offset, 4)
     
     entity.drop_position = get_absolute_drop_pos(entity, data)
+    entity.direction = entity.direction
 end
 
 function Inserter.rotate_offset(entity, amount)
@@ -199,6 +201,7 @@ function Inserter.rotate_offset(entity, amount)
     data.offset = rotate_index(data.offset, amount, 4)
 
     entity.drop_position = get_absolute_drop_pos(entity, data)
+    entity.direction = entity.direction
 end
 
 function Inserter.rotate_length(entity, amount)
@@ -208,6 +211,7 @@ function Inserter.rotate_length(entity, amount)
 
     entity.pickup_position = get_absolute_pickup_pos(entity, data)
     entity.drop_position = get_absolute_drop_pos(entity, data)
+    entity.direction = entity.direction
 end
 
 function Inserter.default_offset(prototype)

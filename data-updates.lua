@@ -24,5 +24,6 @@ for _, inserter in pairs(data.raw.inserter) do
         if override_offset then
             inserter.insert_position = Inserter.default_offset(inserter)
         end
+        inserter.extension_speed = inserter.rotation_speed * 8
     end
 end
