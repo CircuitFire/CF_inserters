@@ -2,7 +2,7 @@ data:extend{
     {
         type = "custom-input",
         name = "cf-drop-position",
-        key_sequence = "CONTROL + R",
+        key_sequence = "CONTROL + E",
     },
     {
         type = "custom-input",
@@ -13,7 +13,7 @@ data:extend{
     {
         type = "custom-input",
         name = "cf-pickup-position",
-        key_sequence = "CONTROL + E",
+        key_sequence = "CONTROL + R",
     },
     {
         type = "custom-input",
