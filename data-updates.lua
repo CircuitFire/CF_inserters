@@ -7,6 +7,7 @@ local function normal_inserter(i)
         and i.draw_inserter_arrow ~= false
         and math.floor(math.abs(i.pickup_position[1])) == math.floor(math.abs(i.insert_position[1]))
         and math.floor(math.abs(i.pickup_position[2])) == math.floor(math.abs(i.insert_position[2]))
+        and (i.collision_box[2][1] - i.collision_box[1][1]) < 1
     )
 end
 
